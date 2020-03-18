@@ -7,7 +7,7 @@ TextureImporter:
     second: Idle_00
   - first:
       213: -8590976481669380332
-    second: adventurer_tilesheet_1
+    second: jump_00
   - first:
       213: -3375247832252135793
     second: adventurer_tilesheet_2
@@ -179,7 +179,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: adventurer_tilesheet_1
+      name: jump_00
       rect:
         serializedVersion: 2
         x: 80

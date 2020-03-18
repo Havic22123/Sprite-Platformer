@@ -31,16 +31,16 @@ public class PlayerController : MonoBehaviour
         if(xMovement > 0)
         {
             sr.flipX = false;
-            animator.Play("SpriteWalk");
+            animator.Play("Sprite Walk");
         }
         else if(xMovement < 0)
         {
             sr.flipX = true;
-            animator.Play("SpriteWalk");
+            animator.Play("Sprite Walk");
         }
         else
         {
-            animator.Play("SpriteIdle");
+            animator.Play("Sprite Idle");
         }
         // Detect if the player is on the ground
         RaycastHit2D hitInfo = Physics2D.Raycast(groundPoint.position, Vector2.down, 0.1f);
