@@ -31,6 +31,14 @@ public class PlayerController : MonoBehaviour
         
         // Detect if the player is on the ground
         RaycastHit2D hitInfo = Physics2D.Raycast(groundPoint.position, Vector2.down, 0.1f);
+        if (isGrounded)
+        {
+            speed = speed-1f;
+        }
+        if (isGrounded && speed<5)
+        {
+            speed = 5f;
+        }
         if (hitInfo.collider != null)
         {
             isGrounded = true;
@@ -39,26 +47,37 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
         }
-        if(xMovement > 0)
+        if(xMovement > 0 && isGrounded)
         {
             sr.flipX = false;
             animator.Play("Sprite Walk");
         }
-        else if(xMovement < 0)
+        else if(xMovement < 0 && isGrounded)
         {
             sr.flipX = true;
             animator.Play("Sprite Walk");
         }
-        else
+        else if(isGrounded)
         {
             animator.Play("Sprite Idle");
         }
         // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
-            Debug.Log("Jump");
             rb2d.AddForce(Vector2.up * jumpForce);
         }
-        
+        else if (xMovement > 0 && !isGrounded)
+        {
+            sr.flipX = false;
+            animator.Play("Sprite Jump");
+            speed = speed + 0.1f;
+        }
+        else if (xMovement < 0 && !isGrounded)
+        {
+            sr.flipX = true;
+            animator.Play("Sprite Jump");
+            speed = speed + 0.1f;
+        }
+
     }
 }

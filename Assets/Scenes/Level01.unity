@@ -129,6 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 755482879}
+  - component: {fileID: 755482880}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: Untagged
@@ -150,6 +151,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &755482880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755482878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc052d6e8d3a04d4f818235a52eeda0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScene: 0
+--- !u!1 &1411936120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9034082529987906129, guid: 9ccb67f74ba910d4ba590aaf494147f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 9034082529345762990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1411936121 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7966364029866117803, guid: 9ccb67f74ba910d4ba590aaf494147f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 9034082529345762990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1411936128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411936120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e6094101b0db0459b97fe8f4daccc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1411936121}
+  screamClip: {fileID: 8300000, guid: 5624592e8271e5e4594c773c65735fef, type: 3}
+  doorClip: {fileID: 8300000, guid: 376c12db1f5ac474b93757784689d644, type: 3}
 --- !u!1 &1442706979
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 3541064992714510167, guid: 565149ac5feca85499b582466b98cc49,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3541064992714510167, guid: 565149ac5feca85499b582466b98cc49,
         type: 3}
@@ -341,6 +382,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3541064992714510248, guid: 565149ac5feca85499b582466b98cc49,
+        type: 3}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541064992714510248, guid: 565149ac5feca85499b582466b98cc49,
+        type: 3}
+      propertyPath: m_Depth
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3541064992714510251, guid: 565149ac5feca85499b582466b98cc49,
         type: 3}
       propertyPath: m_Name
@@ -363,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 6416067416482645157, guid: a693a3bfa13478543ba80e49aa3a992b,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6416067416482645158, guid: a693a3bfa13478543ba80e49aa3a992b,
         type: 3}
@@ -429,15 +480,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7966364029866117803, guid: 9ccb67f74ba910d4ba590aaf494147f2,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966364029866117803, guid: 9ccb67f74ba910d4ba590aaf494147f2,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9034082529987906129, guid: 9ccb67f74ba910d4ba590aaf494147f2,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9034082529987906474, guid: 9ccb67f74ba910d4ba590aaf494147f2,
-        type: 3}
-      propertyPath: isGrounded
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9034082529987906477, guid: 9ccb67f74ba910d4ba590aaf494147f2,
         type: 3}
