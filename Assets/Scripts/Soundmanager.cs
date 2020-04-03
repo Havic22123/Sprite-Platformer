@@ -26,11 +26,11 @@ public class Soundmanager : MonoBehaviour
             audioSource.clip = doorClip;
             audioSource.Play();
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             audioSource.Stop();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             if(audioSource.isPlaying)
             {

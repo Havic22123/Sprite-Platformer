@@ -7,6 +7,7 @@ public class gamemanager : MonoBehaviour
 {
     public static gamemanager instance;
     public int currentScene = 0;
+    public int score = 0;
     // Start is called before the first frame update
     void Awake()
     {

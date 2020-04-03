@@ -62,21 +62,29 @@ public class PlayerController : MonoBehaviour
             animator.Play("Sprite Idle");
         }
         // Jump
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
             rb2d.AddForce(Vector2.up * jumpForce);
         }
-        else if (xMovement > 0 && !isGrounded)
+        if (xMovement > 0 && !isGrounded)
         {
             sr.flipX = false;
             animator.Play("Sprite Jump");
-            speed = speed + 0.1f;
+            speed = speed + 0.15f;
+            if (speed > 20)
+            {
+                speed = 20f;
+            }
         }
-        else if (xMovement < 0 && !isGrounded)
+        if (xMovement < 0 && !isGrounded)
         {
             sr.flipX = true;
             animator.Play("Sprite Jump");
-            speed = speed + 0.1f;
+            speed = speed + 0.15f;
+            if(speed > 20)
+            {
+                speed = 20f;
+            }
         }
 
     }
